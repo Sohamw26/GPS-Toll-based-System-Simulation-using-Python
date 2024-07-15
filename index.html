@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPS Toll Simulation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>GPS Toll Simulation</h1>
+    <div id="container">
+        <div id="controls">
+            <label for="source">Source:</label>
+            <select id="source">
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+            <label for="destination">Destination:</label>
+            <select id="destination">
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+            <button onclick="calculateToll()">Get Toll</button>
+            <button onclick="getTollBooths()">Get Toll Booths</button>
+            <button onclick="simulateSpeed()">Simulate Speed</button>
+        </div>
+        <p id="toll_result"></p>
+        <p id="distance_result"></p>
+        <p id="speed_result"></p>
+        <p id="reward_result"></p>
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
